@@ -9,8 +9,14 @@ def crear_tablero(filas: int, columnas: int) -> list[list[bool]]:
     Devuelve:
         Una lista de listas con todos los elementos False.
     """
-    # TODO: Ejercicio 1
-    pass
+    res = []
+    matriz = []
+    columna = []
+    for i in range(columnas):
+        columna.append(False)
+    for i in range(filas):
+        matriz.append(columna)
+    return matriz
 
 def crear_tablero_aleatorio(filas: int, columnas: int, probabilidad_vida: float) -> list[list[bool]]:
     """
@@ -25,8 +31,16 @@ def crear_tablero_aleatorio(filas: int, columnas: int, probabilidad_vida: float)
     Devuelve:
         Una lista de listas que representa el tablero con células vivas (True) y muertas (False).
     """
-    # TODO: Ejercicio 2
-    pass
+    tabla = crear_tablero(filas, columnas)
+    for i in tabla:
+        for j in i:
+            if random.random() < probabilidad_vida:
+                i[j] = True
+
+    return tabla
+            
+        
+    random.random()
 
 def insertar_patron(tablero: list[list[bool]], patron: list[list[bool]], pos_fila: int, pos_col: int):
     """
@@ -36,9 +50,30 @@ def insertar_patron(tablero: list[list[bool]], patron: list[list[bool]], pos_fil
         patron (list[list[bool]]): El patrón a insertar.
         pos_fila (int): La fila en la que se insertará la esquina superior izquierda del patrón.
         pos_col (int): La columna en la que se insertará la esquina superior izquierda del patrón.
+    
+    for j in tablero[pos_fila:]:
+        subfila_a_modificar = tablero[pos_col:]
+        if patron[0] > subfila_a_modificar:
+            return tablero
+        subfila_a_modificar = patron[i]s
+        for 
+
+        return tablero
     """
-    # TODO: Ejercicio 3
-    pass
+    filas_patron = len(patron)
+    columnas_patron = len(patron[0])
+    filas_tablero = len(tablero)
+    columnas_tablero = len(tablero[0])
+    
+    for f in range(filas_patron):
+        if pos_fila+f>=filas_tablero:
+            break
+        for c in range(columnas_patron):
+            if pos_col+c>=columnas_tablero:
+                break
+            tablero[pos_fila+f][pos_col+c]=patron[f][c]
+    return tablero
+
 
 def contar_vecinos(tablero: list[list[bool]], fila: int, col: int) -> int:
     """
@@ -51,8 +86,9 @@ def contar_vecinos(tablero: list[list[bool]], fila: int, col: int) -> int:
     Devuelve:
         El número de vecinos vivos (int).
     """
-    # TODO: Ejercicio 4
-    pass
+    for i in range():
+        for j in columna:
+
 
 def calcular_siguiente_generacion(tablero):
     """
